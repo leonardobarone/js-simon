@@ -11,8 +11,10 @@ var arrayNumeriInseritiDaUtente = [];
 setTimeout(
     function(){
         for(var i = 0; i < 5; i++) {
+
             numeroInseritoDaUtente = parseInt(prompt("Inserisci i numeri che hai visto precendemente"));
-            arrayNumeriInseritiDaUtente.push(numeroInseritoDaUtente);
+            arrayNumeriInseritiDaUtente.push(numeroInseritoDaUtente);   
+
         }
     },
     3 * 1000
