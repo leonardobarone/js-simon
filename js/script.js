@@ -23,7 +23,7 @@ setTimeout(
                 
                 i++
             } else {
-                alert("attenzione");
+                alert("attenzione non è un numero compreso tra 1 e 5");
             }
             
 
@@ -41,25 +41,24 @@ setTimeout(
     3 * 1000
     );
     // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-    var x = 0;
+    var arrayNumeriIndovinati = [];
 setTimeout (
     function(){
         
         for (var i = 0; i < 5; i++) {
             if(arrayNumeriInseritiDaUtente[i] == arrayDiNumeriRandom[i]) {
-                x += 1;                
+                arrayNumeriIndovinati.push(arrayDiNumeriRandom[i]);                
             }
          }
 
-         if (x == 5) {
-             console.log("hai vinto")
+         if (arrayNumeriIndovinati.length == 5) {
+             document.getElementById("risultato").innerHTML += "hai vinto";
+             document.getElementById("risultato").classList.add("verde");
          } else {
-             console.log("hai perso");
+            document.getElementById("risultato").innerHTML += ("hai perso indovinandone: " + arrayNumeriIndovinati.length);
+            document.getElementById("risultato").classList.add("rosso");
          }
          
     },
     4 * 1000
 );
-
-
-// 5 4 2 4 5 

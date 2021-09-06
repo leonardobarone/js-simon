@@ -7,3 +7,13 @@
 body {
     background-color: lightgray;
 }
+#risultato {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.rosso {
+    color: red;
+}
+.verde {
+    color: green;
+}
