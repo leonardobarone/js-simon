@@ -10,29 +10,56 @@ alert(`I 5 numeri generati casualmente sono: ${arrayDiNumeriRandom.join(' - ')}`
 var arrayNumeriInseritiDaUtente = [];
 setTimeout(
     function(){
-        for(var i = 0; i < 5; i++) {
 
+        var i = 0;
+        
+        while(i < 5) {
+            
             numeroInseritoDaUtente = parseInt(prompt("Inserisci i numeri che hai visto precendemente"));
-            arrayNumeriInseritiDaUtente.push(numeroInseritoDaUtente);   
+            
+            if (!isNaN(numeroInseritoDaUtente) && numeroInseritoDaUtente <= 5 && numeroInseritoDaUtente >= 1) {
+                
+                arrayNumeriInseritiDaUtente.push(numeroInseritoDaUtente); 
+                
+                i++
+            } else {
+                alert("attenzione");
+            }
+            
 
         }
+
+
+        // for(var i = 0; i < 5; i++) {
+
+            
+        //     numeroInseritoDaUtente = parseInt(prompt("Inserisci i numeri che hai visto precendemente"));
+        //     arrayNumeriInseritiDaUtente.push(numeroInseritoDaUtente);   
+
+        // }
     },
     3 * 1000
-);
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+    );
+    // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+    var x = 0;
 setTimeout (
     function(){
-        var control = false;
+        
         for (var i = 0; i < 5; i++) {
-           if (arrayDiNumeriRandom[i] == arrayNumeriInseritiDaUtente[i]) {
-                control = true;
-           }
+            if(arrayNumeriInseritiDaUtente[i] == arrayDiNumeriRandom[i]) {
+                x += 1;                
+            }
          }
-         if (control == true) {
-             alert("hai vinto!")
+
+         if (x == 5) {
+             console.log("hai vinto")
          } else {
-             alert("HAI PERSO!");
+             console.log("hai perso");
          }
+         
     },
     4 * 1000
 );
+
+
+// 5 4 2 4 5 
