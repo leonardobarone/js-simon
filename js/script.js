@@ -28,6 +28,8 @@ setTimeout (
          }
          if (control == true) {
              alert("hai vinto!")
+         } else {
+             alert("HAI PERSO!");
          }
     },
     4 * 1000
